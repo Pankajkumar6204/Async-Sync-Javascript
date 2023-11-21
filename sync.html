@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronus & synchronus learning</title>
+</head>
+<body>
+    <div class="container">
+        <h1>You want to change your Questions if No then click Stop Button?</h1>
+        <button id="stop">Stop</button>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#stop')
+        const body = document.querySelector('body')
+        const heading = document.querySelector('h1')
+
+        btn.addEventListener('click', function(e){
+            body.style.backgroundColor = '#212121'
+            body.style.color = 'white'
+        }, false)
+
+        // !!!!!!!!! setTimeOut function
+
+        // setTimeout(function(){
+        //     console.log('pankaj sahi');
+        // }, 5000)
+
+        // change text using setTimeOut function!!!!!!!
+        // const sayPankaj =  function() {
+        //     document.querySelector('h1').innerHTML = 'How to find this js series'
+        // }
+        // setTimeout(sayPankaj, 5000)
+
+        // Stop btn using stop setTimeOut function!!!!!!!!!!!!
+        const sayHello = function(){
+            heading.innerHTML = 'How to Learn Asynchronus & synchronus?'
+        }
+        const changeMe = setTimeout(sayHello, 5000)
+
+        btn.addEventListener('click', function() {
+            clearTimeout(changeMe);
+        })
+
+    </script>
+</body>
+</html>
